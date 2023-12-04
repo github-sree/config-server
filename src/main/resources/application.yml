@@ -1,5 +1,5 @@
 server:
-  port: 8099
+  port: 8088
 
 spring:
   cloud:
@@ -31,6 +31,6 @@ spring:
     name: config-server
   profiles:
     active:
-    - dev
+    - local
 
 
