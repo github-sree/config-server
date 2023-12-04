@@ -1,0 +1,36 @@
+server:
+  port: 8088
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/github-sree/configurations.git
+#          host-key: hostKey
+          username: ${USERNAME}
+          password: ${PASSWORD}      
+#          hostKeyAlgorithm: ssh-rsa
+          ignore-local-ssh-settings: true
+#          private-key: |
+#             -----BEGIN RSA PUBLIC KEY-----
+#             MIICCgKCAgEAyorO/W0vdyNvweKKxqn/hmE2bU0yx6gMWj0+Yq8RqHkCkIdRLrZr
+#             GXuRU764pzBcgNZIETXiDNPwq3Ffb0LsdoT8T9IU4dDdeFmFpvmgAaiEm5KTaWbk
+#             p/wziOeQ8Pu8FitNEyWq8Rw/GY+B0JV4PWnn2JmM8x5LH2VKgZoY0HKPsrHjLnCW
+#             nN43Ww254HkYfwqZ1rEJyxYFMCPfKzKc78T964FeNXDBtrcKGJmG/XFVtrsVoGqY
+#             yI2xwTBHOKkTs0bFzueruY/tp4Q0NXe1GM63ZT9AKS1YUa0m5f4QfOZx5OLC5D4r
+#             rkK4kuLZZhgh7FSZI6AcBJZ/TxitzTaiMrAOehQUuongOjUdysFfw+sXOR540VZ+
+#             EWzM5l+eRaXr4dIaQQ7v0wvWaunSxpou9WvfotzUybIGo9foY/raGEhZPFWGY5sk
+#             PlFrQO+Ez1+vGGcxXSGeGFux/nuQGniuuzOBfhSE8b1xIOVOmNbK00P9IOvgUs9B
+#             5uX/7Voby31OSHPVrxRdGFVCzvIXkUwQs/f2tVRGZc5VR6m1bludZjoZpvk5X4zJ
+#             TL/a6Omx6Lqn04LwRykCVSu0kRNxPqr1tcEoKTNTgwmoJ/Gh5iTsNZ6r/phDfAFd
+#             xrN+gZelNeno0sWc/4BnVu+sOKsz76CPP+4zYqhM4EpB8/hLg0XtWR8CAwEAAQ==
+#             -----END RSA PUBLIC KEY-----
+#                          
+  application:
+    name: config-server
+  profiles:
+    active:
+    - local
+
+
