@@ -31,6 +31,6 @@ spring:
     name: config-server
   profiles:
     active:
-    - local
+    - dev
 
 
