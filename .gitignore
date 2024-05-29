@@ -30,4 +30,6 @@ replay_pid*
 bin
 build
 .project
-.idea
+.classpath
+.gradle
+.settings
