@@ -9,9 +9,8 @@ resources:
 jobs:
   - name: build and test
     public: true
-    trigger: true
     plan:
       - get: config-server
         trigger: true
-      - task: web-app-tests
+      - task: build
         file: config-server/tasks/build.yml
