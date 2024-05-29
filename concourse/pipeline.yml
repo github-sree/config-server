@@ -7,12 +7,10 @@ resources:
       branch: dev
 
 jobs:
-  - name: build
+  - name: build and test
     public: true
     plan:
       - get: config-server
         trigger: true
-      - task: Build project
-        file: config-server/concourse/tasks/build.yml
-      - task: Deploy artifact
-        file: config-server/concourse/tasks/deploy.yml
+      - task: web-app-tests
+        file: config-server/tasks/build.yml

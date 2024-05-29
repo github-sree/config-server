@@ -1,14 +1,12 @@
+---
 platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: java, tag: eclipse-temurin:17}
+  source: {repository: java, tag: openjdk-8}
 
 inputs:
-  - name: config-server
-
-outputs:
-  - name: build-output
+  - name: resource-tutorial
 
 run:
-  path: "config-server/concourse/tasks/build.sh"
+  path: config-server/tasks/build.sh
