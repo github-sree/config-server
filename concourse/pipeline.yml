@@ -1,17 +1,43 @@
----
+jobs:
+  - name: config-server-test
+    plan:
+      - get: config-server
+        trigger: true
+      - config:
+          caches:
+            - path: $HOME/.m2/repository
+            - path: $HOME/.gradle/caches/
+            - path: $HOME/.gradle/wrapper/
+          container_limits: {}
+          image_resource:
+            name: ""
+            source:
+              repository: gradle
+              tag: jdk17-slim
+            type: registry-image
+          inputs:
+            - name: config-server
+          platform: linux
+          run:
+            args:
+              - -c
+              - |
+                java -Xmx32m -version
+                javac -J-Xmx32m -version
+                
+                cd config-server
+                
+                gradle wrapper
+                ./gradlew rat
+                ./gradlew systemTestLibs
+            path: /bin/sh
+            user: root
+        task: run-tests
+    public: true
+
 resources:
-  - name: resource-tutorial
-    type: git
+  - icon: github
+    name: config-server
     source:
       uri: https://github.com/github-sree/config-server.git
-      branch: dev
-jobs:
-  - name: job-test-app
-    public: true
-    version: every
-    plan:
-      - get: resource-tutorial
-        trigger: true
-        version: every
-      - task: web-app-tests
-        file: resource-tutorial/concourse/tasks/build.yml
+    type: git
