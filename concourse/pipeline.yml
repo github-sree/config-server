@@ -13,7 +13,7 @@ jobs:
             name: ""
             source:
               repository: gradle
-              tag: jdk17-slim
+              tag: jdk8-slim
             type: registry-image
           inputs:
             - name: config-server
