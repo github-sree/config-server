@@ -13,7 +13,7 @@ jobs:
             name: ""
             source:
               repository: gradle
-              tag: openjdk-17
+              tag: eclipse-temurin:17-jdk-alpine
             type: registry-image
           inputs:
             - name: config-server
