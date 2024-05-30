@@ -8,6 +8,7 @@ resources:
 jobs:
   - name: job-test-app
     public: true
+    version: every
     plan:
       - get: resource-tutorial
         trigger: true
