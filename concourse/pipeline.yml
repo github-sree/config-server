@@ -25,7 +25,7 @@ jobs:
                 java -Xmx32m -version
                 javac -J-Xmx32m -version
                 
-                cd config-server
+                cd config-server && chmod -R 777 .
                 
                 gradle wrapper
                 ./gradlew rat
