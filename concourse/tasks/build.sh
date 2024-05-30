@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
-config-server/gradlew --build-file config-server/build.gradle build
-cp config-server/build/libs/*.jar build-output/
+resource-tutorial/gradlew --build-file config-server/build.gradle build
+cp resource-tutorial/build/libs/*.jar build-output/

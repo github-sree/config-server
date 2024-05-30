@@ -1,16 +1,15 @@
+---
 resources:
-  - name: config-server
+  - name: resource-tutorial
     type: git
-    check_every: 10s
     source:
       uri: https://github.com/github-sree/config-server.git
-      branch: dev
 
 jobs:
-  - name: build and test
+  - name: job-test-app
     public: true
     plan:
-      - get: config-server
+      - get: resource-tutorial
         trigger: true
-      - task: build
-        file: config-server/tasks/build.yml
+      - task: web-app-tests
+        file: resource-tutorial/concourse/tasks/build.yml
