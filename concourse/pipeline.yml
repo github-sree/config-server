@@ -12,5 +12,6 @@ jobs:
     plan:
       - get: resource-tutorial
         trigger: true
+        version: every
       - task: web-app-tests
         file: resource-tutorial/concourse/tasks/build.yml
