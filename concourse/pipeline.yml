@@ -40,4 +40,5 @@ resources:
     name: config-server
     source:
       uri: https://github.com/github-sree/config-server.git
+      branch: dev
     type: git
