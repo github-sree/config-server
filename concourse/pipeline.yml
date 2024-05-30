@@ -4,7 +4,7 @@ resources:
     type: git
     source:
       uri: https://github.com/github-sree/config-server.git
-
+      branch: dev
 jobs:
   - name: job-test-app
     public: true
